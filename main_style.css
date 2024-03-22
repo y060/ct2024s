@@ -1,0 +1,233 @@
+@import url('https://db.onlinewebfonts.com/c/12fc160800285847a53d4592b2357737?family=UniDream+LED+Regular');
+
+.bg-img{
+    background-size: cover;
+    background-repeat :no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+.bg-img-mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+
+    z-index: -1;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* 自我介紹 */
+#introduce{
+    width: 90%;
+    margin: 5rem;
+    position: fixed;
+    top: 7%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clock-hours:before,
+.clock-minutes:before,
+.clock-seconds:before{
+    font-family: "UniDream LED Regular";
+}
+.clock-hours:before{
+    content: var(--timer-hours);
+}
+.clock-minutes:before{
+    content: var(--timer-minutes);
+}
+.clock-seconds:before{
+    content: var(--timer-seconds);
+}
+
+#clock{
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem 1rem 1.5rem 1rem;
+    display: flex;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, .7);
+    background-color: rgba(255, 255, 255, .4);
+    backdrop-filter: blur(5px);
+}
+#clock p{
+    margin: 0;
+}
+.clock-col{
+    text-align: center;
+    margin: 0 1rem;
+    min-width: 90px;
+    position: relative;
+}
+.clock-col:not(:last-child):before,
+.clock-col:not(:last-child):after{
+    content: "";
+    background-color: rgba(255,255,255,.3);
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    right: -1rem;
+}
+.clock-col:not(:last-child):before {
+    top: 35%;
+}
+.clock-col:not(:last-child):after {
+    top: 50%;
+}
+.clock-timer:before {
+    color: #fff;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+}
+.clock-label {
+    color: rgba(255,255,255,.35);
+    text-transform: uppercase;
+    font-size: .7rem;
+    margin-top: 10px;
+}
+
+
+#profile{
+    
+}
+#profile_photo img{
+    aspect-ratio: 1/1;
+    width: 13rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+#profile_info{
+    margin: 1.5rem .5rem;
+}
+#profile_info .name{
+    font: bold 2rem "Poppins", sans-serif;
+}
+#social_media a{
+    margin: 0 .3rem;
+}
+
+
+/* 作業區 */
+#homework{
+    width: 100%;
+    height: fit-content;
+    position: fixed;
+    bottom: 15%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    scroll-behavior: smooth;
+}
+#hw_row{
+    overflow: hidden;
+}
+
+.hw-cards{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+.hw-cards a{
+    height: 100%;
+}
+.hw-cards li{
+    min-width: 15rem;
+    height: 10rem;
+    margin: .5rem;
+    padding: .5rem 1rem;
+    position: relative;
+
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+
+    border-radius: 6px;
+}
+.hw-cards li:hover{
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(30px);
+    transform: scale(1.1);
+    transition: all .5s ease-in-out;
+}
+.hw-title{
+    font-family: "Anton", sans-serif;
+    font-size: 2rem;
+}
+.hw-deadline{
+    color: gray;
+}
+
+#left_btn,
+#right_btn{
+    border: none;
+    background-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+
+/* 底 */
+.footer{
+    width: 100%;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+
+    background-color: rgba(0, 0, 0, .6);
+    text-align: center;
+}
+
+
+@media (max-width: 576px) {
+    main{
+        flex-flow: column nowrap;
+    }
+    #introduce{
+        width: 80vw;
+        height: 40vh;
+        margin: 1rem 10vw;
+        flex-direction: column-reverse;
+    }
+    #profile{
+        text-align: center;
+    }
+    #profile_photo img{
+        width: 10rem
+    }
+
+    #homework{
+        height: 50vh;
+        top: 50vh;
+        overflow-y: scroll;
+    }
+    #hw-row{
+        height: 100%;
+        overflow-y: scroll;
+    }
+    .hw-cards{
+        margin: 0 1rem;
+        height: 10rem;
+        padding: 0;
+        flex-direction: column;
+    }
+    .hw-title{
+        float: inline-start;
+    }
+    #ctrl_btn{
+        display: none;
+    }
+}

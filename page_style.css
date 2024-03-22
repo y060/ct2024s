@@ -1,0 +1,60 @@
+body{
+    /* background: linear-gradient(45deg, #1870ed 0, #f18f88 100%); */
+    color: var(--dark-color);
+    background: var(--dark-bg);
+}
+
+.profile{
+    margin: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    float: right;
+}
+.profile-photo img{
+    aspect-ratio: 1/1;
+    width: 3rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+.profile p{
+    margin: 0;
+    padding: 0 1rem;
+}
+
+
+.title{
+    margin-top: 5rem;
+}
+.title p{
+    color: var(--dark-teriary-color)
+}
+.title h1{
+    font-weight: bold;
+}
+.title-hr{
+    height: 2px  !important;
+    color: var(--dark-secondary-color);
+}
+
+
+@keyframes float-animation{
+    from { transform: translateY(0); }
+    to { transform: translateY(15px); }
+}
+.folder{
+    padding: 1rem;
+    position: fixed;
+    bottom: 10vh;
+    right: 5vw;
+    float: right;
+    z-index: 999;
+
+    border-radius: 50%;
+    background-color: var(--dark-color);
+
+    animation: float-animation .7s ease infinite alternate;
+}
+.folder svg{
+    color: var(--dark-bg)
+}
