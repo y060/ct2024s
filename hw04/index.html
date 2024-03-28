@@ -178,9 +178,18 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      該次作業程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/ct2024s/hw<span style="color:red;">04</span>/src/ 檔案夾。
+      <h4><u>電腦字體放置位置</u></h4>
+    <a href="https://github.com/y060/ct2024s/raw/main/hw04/src/1082B0005.ttf" download="112598018.ttf">Download ttf檔案</a>
+    <br>
+    <a href="https://github.com/y060/ct2024s/raw/main/hw04/src/1082B0005.woff2" download="112598018.woff2">Download Woff2檔案</a>        
     </div>
   </div>
+
+  <!-- ------------------------------------------------>
+  
+
+  
+  <!-- ------------------------------------------------>
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
@@ -192,28 +201,69 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <table>
+      <h4><u>項目成績確認表</u></h4>
+      <table style="width:100%">
         <tr>
           <th>總分</th>
           <th>完成後打勾</th>
           <th>配分</th>
+          <th>等級</th>
           <th>分項描述</th>
         </tr>
         <tr>
-          <td rowspan="7" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
-          <td id='m1'>2</td>
-          <td>Simple baseline - 描述、描述、描述</td>
+          <td rowspan="9" id="myTotal"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked="checked"></td>
+          <td id='m1'>1</td>
+          <td>Simple baseline</td>
+          <td>下載專案</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
-          <td id='m2'>6</td>
-          <td>Medium baseline - 描述、描述、描述 </td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked="checked"></td>
+          <td id='m2'>1</td>
+          <td></td>
+          <td>下載Node.js</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
-          <td id='m3'>2</td>
-          <td>Strong baseline - 描述、描述、描述 </td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked="checked"></td>
+          <td id='m3'>1</td>
+          <td></td>
+          <td>安裝專案</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked="checked"></td>
+          <td id='m4'>1</td>
+          <td></td>
+          <td>安裝Node.js</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox5" checked="checked"></td>
+          <td id='m5'>1</td>
+          <td>Medium baseline</td>
+          <td>PNG轉換成SVG</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox6" checked="checked"></td>
+          <td id='m6'>2</td>
+          <td></td>
+          <td>SVG轉換成SVG去除黑塊</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox7" checked="checked"></td>
+          <td id='m7'>1</td>
+          <td></td>
+          <td>SVG轉換成TTF、Woff2</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox8"  checked="checked"></td>
+          <td id='m8'>1</td>
+          <td>Strong baseline</td>
+          <td>字體安裝</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox9"  checked="checked"></td>
+          <td id='m9'>1</td>
+          <td></td>
+          <td>WORD實際應用</td>
         </tr>
       </table>
     </div>
@@ -222,14 +272,17 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
+      <h4><u>成果顯示</u></h4>
+      <table style="width:100%">
+        <tr>
+          <th>顯示用WORD使用電腦字體打字的畫面</th>
+        </tr>
+        <tr>
+           <th><img src="./src/result.png" alt="成果圖片" width="100%" height="100%" /></th>
+        </tr>
+      </table>
     </div>
   </div>
-
-  <!-- ------------------------------------------------>
-
   <!-- ------------------------------------------------>
 
 
@@ -248,6 +301,8 @@
   d3.select("#myCheckbox5").on("change",update);
   d3.select("#myCheckbox6").on("change",update);
   d3.select("#myCheckbox7").on("change",update);
+  d3.select("#myCheckbox8").on("change",update);
+  d3.select("#myCheckbox9").on("change",update);
 
   update();
   
@@ -267,6 +322,29 @@
       score += parseInt(d3.select('#m3').html());   
     }
 
+    if (d3.select("#myCheckbox4").property("checked")){
+      score += parseInt(d3.select('#m4').html());   
+    }
+
+    if (d3.select("#myCheckbox5").property("checked")){
+      score += parseInt(d3.select('#m5').html());
+    }
+
+    if (d3.select("#myCheckbox6").property("checked")){
+      score += parseInt(d3.select('#m6').html());   
+    }
+
+    if (d3.select("#myCheckbox7").property("checked")){
+      score += parseInt(d3.select('#m7').html());   
+    }
+
+    if (d3.select("#myCheckbox8").property("checked")){
+      score += parseInt(d3.select('#m8').html());   
+    }
+
+    if (d3.select("#myCheckbox9").property("checked")){
+      score += parseInt(d3.select('#m9').html());   
+    }
     d3.select("#myTotal").html(score);    
   }
 </script>
