@@ -80,6 +80,10 @@
                 return d.SSIM >= 0 && d.SSIM <= 1 && d.LPIPS >= 0 && d.LPIPS <= 0.8;
             });
 
+            var isMe = data.filter((d) => {
+                return d.SSIM == 1 && d.LPIPS == 0;
+            })
+
             // 創建散點
             svg.append('g')
                 .selectAll("dot")
@@ -89,7 +93,13 @@
                   .attr("cx", function (d) { return x(d.SSIM); } )
                   .attr("cy", function (d) { return y(d.LPIPS); } )
                   .attr("r", 6)
-                  .style("fill", "#69b3a2")
+                  .style("fill", (d) => {
+                    if (d == isMe){
+                        return "#ff0000";
+                    }else{
+                        return "#69b3a2";
+                    }
+                  })
 
             // 創建tooltip
             var tooltip = d3.select("body").append("div")
