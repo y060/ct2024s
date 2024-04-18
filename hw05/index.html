@@ -178,14 +178,18 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      該次作業程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/ct2024s/hw<span style="color:red;">05</span>/src/ 檔案夾。
+      該次作業程式碼，請放在<br>
+      https://github.com/<span style="color:red;">y060</span>/ct2024s/hw<span style="color:red;">05</span>/<span style="color:red;">Simple</span>。<br>
+      https://github.com/<span style="color:red;">y060</span>/ct2024s/hw<span style="color:red;">05</span>/<span style="color:red;">Medium</span>。<br>
+      https://github.com/<span style="color:red;">y060</span>/ct2024s/hw<span style="color:red;">05</span>/<span style="color:red;">Strong</span>。
     </div>
   </div>
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+      本次作業較為麻煩的是電腦硬體的問題。因為這次作業會需要跑訓練，對於電腦性能就會有要求。我的電腦是GTX1650，要是想跑訓練需要的時間滿可觀的，再加上一直有要帶筆電出門的需求，沒辦法讓電腦待著不動它，因此一直沒有時間完成作業。
+      <br>我覺得還滿可惜的，畢竟這次是利用現有字體生成其他缺少的字，我也很好奇電腦拿到我的字體後，會生出怎麼樣的字出來。    
     </div>
   </div>
 
@@ -201,19 +205,24 @@
         </tr>
         <tr>
           <td rowspan="7" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
           <td id='m1'>2</td>
-          <td>Simple baseline - 描述、描述、描述</td>
+          <td>Simple baseline - 產生訓練樣本（4808字/2）（放入image_train，壓縮檔上傳）</td>
         </tr>
         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
-          <td id='m2'>6</td>
-          <td>Medium baseline - 描述、描述、描述 </td>
+          <td id='m2'>2</td>
+          <td>Simple baseline - 產生驗證樣本（4808字/2）（放入image_val，壓縮檔上傳）</td>
         </tr>
         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
-          <td id='m3'>2</td>
-          <td>Strong baseline - 描述、描述、描述 </td>
+          <td id='m3'>4</td>
+          <td>Medium baseline - 繳交字體的對比檔案（以 experiment_學號_姓名.zip 命名） </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4"></td>
+          <td id='m4'>2</td>
+          <td>Strong baseline - 最後生成結果（於infer_1資料夾內）</td>
         </tr>
       </table>
     </div>
@@ -221,14 +230,32 @@
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
-    <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
+    <div class="col-md-12 twenty">    
+      <img src="./src/train.png" width="1200px" height="600px"/>  
+    </div>
+  </div>
+  
+   <div class="row hw12">
+    <div class="col-md-12 twenty">          
+      <img src="./src/val.png" width="1200px" height="600px"/>
+      
     </div>
   </div>
 
   <!-- ------------------------------------------------>
+
+  <div class="row hw12">
+    <div class="col-md-12 twenty">    
+      <h1>Medium Baseline</h1>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">    
+      <h1>Strong Baseline</h1>
+    </div>
+  </div>
 
   <!-- ------------------------------------------------>
 
@@ -265,6 +292,10 @@
 
     if (d3.select("#myCheckbox3").property("checked")){
       score += parseInt(d3.select('#m3').html());   
+    }
+
+    if (d3.select("#myCheckbox4").property("checked")){
+      score += parseInt(d3.select('#m4').html());   
     }
 
     d3.select("#myTotal").html(score);    
