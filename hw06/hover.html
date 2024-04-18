@@ -80,9 +80,14 @@
                 return d.SSIM >= 0 && d.SSIM <= 1 && d.LPIPS >= 0 && d.LPIPS <= 0.8;
             });
 
-            var isMe = data.filter((d) => {
-                return d.SSIM == 1 && d.LPIPS == 0;
-            })
+            function findClosestPoint(data, targetSSIM, targetLPIPS) {
+                return data.reduce(function(prev, curr) {
+                    var prevDistance = Math.sqrt(Math.pow(prev.SSIM - targetSSIM, 2) + Math.pow(prev.LPIPS - targetLPIPS, 2));
+                    var currDistance = Math.sqrt(Math.pow(curr.SSIM - targetSSIM, 2) + Math.pow(curr.LPIPS - targetLPIPS, 2));
+                    return prevDistance < currDistance ? prev : curr;
+                });
+            }
+            var ifMe = findClosestPoint(data, 1, 0);
 
             // 創建散點
             svg.append('g')
