@@ -40,7 +40,7 @@
 
             // 設定x軸
             var x = d3.scaleLinear()
-                .domain([0.45, 0.65]) // ssim
+                .domain([0, 0.8]) // ssim
                 .range([ 0, width ]);
             svg.append("g")
                 .attr("transform", "translate(0," + height + ")")
@@ -59,7 +59,7 @@
 
             // 設定y軸
             var y = d3.scaleLinear()
-                .domain([0.35, 0.60]) // lpips
+                .domain([0, 1]) // lpips
                 .range([ height, 0]);
             svg.append("g")
                 .call(d3.axisLeft(y));
