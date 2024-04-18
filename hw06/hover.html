@@ -94,7 +94,7 @@
                   .attr("cy", function (d) { return y(d.LPIPS); } )
                   .attr("r", 6)
                   .style("fill", (d) => {
-                    if (d == isMe){
+                    if (d === isMe){
                         return "#ff0000";
                     }else{
                         return "#69b3a2";
